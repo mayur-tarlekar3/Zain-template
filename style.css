@@ -70,7 +70,7 @@ nav a:active{
     color: white;
     
 }
-.hamburger i:active{
+.hamburger i:hover{
     padding: 6px 10px;
     border: 1px solid white;
     border-radius: 10px;
@@ -100,9 +100,9 @@ nav a:active{
  background-color: rgb(29, 27, 27);
     box-sizing: border-box;
     padding: 50px;
-    position: absolute;
+    position: fixed;
     top: 80px;
-    z-index: 2;
+    z-index: 100;
 
    
 
@@ -632,6 +632,7 @@ gap: 50px;
 .icon{
     color: #c99b5a;
     font-size: 40px;
+    transform: rotate(-50deg);
 }
 
 .icon-wrapper{
@@ -642,16 +643,21 @@ gap: 50px;
     align-items: center;
     width: 85px;
     height: 85px;
+    transform: rotate(50deg);
      
 }
 
 .icon-wrapper:hover{
-  
+    transition: all 0.4s;
     background-color: #c99b5a; 
      .icon{
         color: white;
+        transform: rotate(360deg);
+      
      }
      cursor: pointer;
+    transform: rotate(0deg);
+     
 }
 
 
@@ -781,6 +787,28 @@ gap: 50px;
     gap: 30px;
 }
 
+/*animation*/
+
+.gallary-img-wrapper,
+.gallary-img2-wrapper,
+.gallary-img3-wrapper,
+.gallary-img4-wrapper,
+.gallary-img5-wrapper,
+.gallary-img6-wrapper,
+.gallary-img7-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.All img {
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.All img:hover {
+    transform: scale(1.1);
+    filter: brightness(0.7);
+    cursor: pointer;
+}
 
 /* LEFT SIDE */
 
@@ -1109,6 +1137,22 @@ div[class*="gallary-img"]:has(img.is-hidden) {
      
 }
 
+ /*animation */
+.blog-wrapper .card {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+.blog-wrapper .card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.blog-wrapper .card:hover .card-content h5 {
+    color: #c99b5a;
+    transition: color 0.4s ease;
+}
+
 @media(max-width:1200px){
     .blog-wrapper .card{
         width: 300px;
@@ -1269,7 +1313,7 @@ div[class*="gallary-img"]:has(img.is-hidden) {
 
     width: 40%;
     background-image: url(/img/contact-left-bg.png);
-
+     opacity: 0.5;
     background-position: center;
     background-size: cover;
     display: flex;
